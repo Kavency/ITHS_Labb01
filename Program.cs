@@ -8,7 +8,7 @@
     Console.WriteLine("Enter a string or press enter for a default string.");
     Console.CursorVisible = true;
     string userInput = GetUserInput("Enter a string: ");
-    PrintDivider(userInput);
+    PrintDivider(userInput.Length);
 
     //
     // Iterate through the string to find numbers starting and ending
@@ -65,10 +65,10 @@
         Console.WriteLine(userInput);
     }
 
-    PrintDivider(userInput);
+    PrintDivider(userInput.Length);
     Console.ForegroundColor = ConsoleColor.Gray;
     Console.WriteLine($"Total amount = {totalSum}");
-    PrintDivider(userInput);
+    PrintDivider(userInput.Length);
     Console.WriteLine();
     
     Console.WriteLine("Press any key to run again, press Esc to exit.");
@@ -103,11 +103,11 @@ static void PrintHeader()
     Console.WriteLine();
 }
 
-static void PrintDivider(string input)
+static void PrintDivider(int lengthOfDivider = 10)
 {
     Console.ForegroundColor = ConsoleColor.Gray;
 
-    foreach (char item in input)
+    for(int i = 0; i < lengthOfDivider; i++)
     {
         Console.Write('-');
     }

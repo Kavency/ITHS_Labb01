@@ -6,6 +6,7 @@
 
     PrintHeader();
     Console.WriteLine("Enter a string or press enter for a default string.");
+    Console.CursorVisible = true;
     string userInput = GetUserInput("Enter a string: ");
     PrintDivider(userInput);
 
@@ -39,14 +40,15 @@
     //
     // Display the result to the user
     //
-    if (listOfColoredNumbers.Count >= 1)
+    if (listOfColoredNumbers.Count > 0)
     {
         foreach (string item in listOfColoredNumbers)
         {
             totalSum += long.Parse(item);
 
             string[] splitUserInputStrings = userInput.Split(item);
-        
+
+            Console.CursorVisible = false;
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write(splitUserInputStrings[0]);
             Console.ForegroundColor = ConsoleColor.Green;

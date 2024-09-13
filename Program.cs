@@ -15,18 +15,18 @@
     //
     for (int i = 0; i < userInput.Length; i++)
     {
-        char charToCompare = userInput[i];
-        string coloredNumbers = string.Empty;
+        char charToCompareWith = userInput[i];
+        string numbersToCheck = string.Empty;
 
         for (int j = startInnerLoopAt; j < userInput.Length; j++)
         {
             if (char.IsDigit(userInput[j]))
             {
-                coloredNumbers += userInput[j];
+                numbersToCheck += userInput[j];
 
-                if (charToCompare == userInput[j] && coloredNumbers.Length > 1)
+                if (charToCompareWith == userInput[j] && numbersToCheck.Length > 1)
                 {
-                    listOfColoredNumbers.Add(coloredNumbers);
+                    listOfColoredNumbers.Add(numbersToCheck);
                     break;
                 }
             }
@@ -45,14 +45,14 @@
         {
             totalSum += long.Parse(item);
 
-            string[] tmp = userInput.Split(item);
+            string[] splitUserInputStrings = userInput.Split(item);
         
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write(tmp[0]);
+            Console.Write(splitUserInputStrings[0]);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(item);
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write(tmp[1]);
+            Console.Write(splitUserInputStrings[1]);
             Console.WriteLine();
             Thread.Sleep(110);
         }
